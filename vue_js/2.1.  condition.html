@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Vue JS</title>
+
+</head>
+<body>
+
+    <h1>Conditional</h1>
+
+    <div id="app">
+        <button @click="klikSaklar()">Saklar</button>
+        <div v-show="stateLampu">
+            Lampu Lakan
+        </div>
+    </div>
+    
+    <script type="module">
+        // import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        import { createApp } from './vue.esm-browser.js'
+
+        createApp({
+            data(){
+                return{
+                    stateLampu : true
+                }
+            },
+            methods:{
+                klikSaklar(){
+                    this.stateLampu = !this.stateLampu
+                }
+            }
+        }).mount('#app')
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+1. Directive:
+  - v-text
+  - v-html
+
+2. Conditional:
+  - v-if, v-else-if, v-else;
+  - v-show
+
+3. Looping:
+  - v-for
+
+4. Event Listener:

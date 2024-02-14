@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Vue JS</title>
+    <!-- <script src="vue.global.js"></script> -->
+
+</head>
+<body>
+
+    <h1>Conditional</h1>
+
+    <div id="app">
+        <div v-if="hamosu">
+            {{mensagem}}
+        </div>
+        <div v-else>
+            {{mensagem1}}
+        </div>
+
+        <div v-if="valor > 7.5">
+            Muito Bom
+        </div>
+        <div v-else-if="valor > 5">
+            Bom
+        </div>
+        <div v-else-if="valor > 2.5">
+            Suficiente
+        </div>
+        <div v-else>
+            Maun
+        </div>
+    </div>
+    
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+        createApp({
+            data(){
+                return{
+                    mensagem : 'Ola Mundu',
+                    mensagem1 : 'Mensagem la mosu',
+                    hamosu : false,
+                    valor : 5.4
+                }
+            },
+        }).mount('#app')
+    </script>
+
+</body>
+</html>

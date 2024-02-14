@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Vue JS</title>
+
+</head>
+<body>
+
+    <h1>Event Handling</h1>
+
+    <div id="app">
+        <!-- Inline / La uja Methods ruma  -->
+        <button v-on:click="count--">-</button>
+            <span>{{ count }}</span>
+        <button @click="count++">+</button>
+        <!-- @click / v-on:click -->
+    </div>
+
+    <div id="app1">
+        <button v-on:click="hamenus()">-</button>
+            <span>{{ count }}</span>
+        <button @click="aumenta()">+</button>
+
+        <hr>
+
+        <button @click="FoInfo('Ola Kolega sira')">Info</button>
+    
+        <hr>
+        <!-- Event Keydown : Enter, space  -->
+        <input type="text" @keydown.enter="FoInfo('Ola Kolega sira')">
+
+        <hr>
+
+        <form action="koko.html" method="post">
+            <input type="text" name="naran">
+            <input type="submit" name="submit" value="rai">
+        </form>
+    </div>
+
+    </div>
+    
+    <script type="module">
+        import { createApp } from './vue.esm-browser.js'
+
+        createApp({
+            data(){
+                return{
+                    count : 0
+                }
+            },
+
+        }).mount('#app')
+
+        createApp({
+            data(){
+                return{
+                    count : 0
+                }
+            },
+            methods : {
+                aumenta(){
+                    this.count++
+                },
+                hamenus(){
+                    this.count--
+                },
+                FoInfo(parameter){
+                    alert(parameter+', Reket lai!')
+                }
+            }
+
+        }).mount('#app1')
+    </script>
+
+</body>
+</html>

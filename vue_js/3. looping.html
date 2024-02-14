@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Vue JS</title>
+
+</head>
+<body>
+
+    <h1>Conditional</h1>
+
+    <div id="app">
+        <b v-for="numeru in 10">
+            {{ numeru }},
+        </b>
+
+        <hr>
+
+        <ul v-for="(whatever, index) in aifuan" style="list-style-type: circle;">
+            <li>{{ index }}. {{ whatever }} <button @click="hamos(index)">X</button> </li>
+        </ul>
+
+        <hr>
+
+        <!-- Array Object -->
+        <ul v-for="item in footballPlayes">
+            <li><b>{{ item.naran }}</b> - {{ item.position }}</li>
+        </ul>
+    </div>
+    
+    <script type="module">
+        import { createApp } from './vue.esm-browser.js'
+
+        createApp({
+            data(){
+                return{
+                    aifuan : ['Apel', 'Anggur', 'Strowberry', 'Melon', 'Orange'],
+                    footballPlayes : [
+                        {naran : 'L. Messi', position : 'Forward'},
+                        {naran : 'C. Ronaldo', position : 'Forward'},
+                        {naran : 'I. Cassilas', position : 'Goal Keeper'},
+                        {naran : 'S. Ramos', position : 'Defender'},
+                        {naran : 'L. Modric', position : 'Mid Field'},
+                        {naran : 'Neymar Jr.', position : 'Forward'},
+                    ]
+                }
+            },
+            methods:{
+                hamos(index){
+                    this.aifuan.splice(index, 1)
+                }
+            }
+
+        }).mount('#app')
+    </script>
+
+</body>
+</html>
